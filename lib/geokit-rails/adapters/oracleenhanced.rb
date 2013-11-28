@@ -6,7 +6,7 @@ module Geokit
        klass.connection.execute <<-EOS
        create or replace function radians(angle_in_degrees in number) return number is
        begin
-         return angle_in_degrees * 3.141592653589793 / 180; 
+         return angle_in_degrees * #{Math::PI} / 180;
         end radians;
        EOS
      end
